@@ -1,4 +1,4 @@
-***Problem :**
+**Problem :**
 To filter out the background during the live stream of educational videos
 
 **Solution:**
@@ -8,3 +8,5 @@ Given the parameters and constraints presented by the problem, in terms of quali
 1. Run `sudo pip3 install -r requirements.txt` to install all packages.
 2. Run  `python inference_video.py` for video files.
 3. Run `python inference_webcam.py` for live streaming.
+
+![alt text](https://www.oreilly.com/library/view/hands-on-image-processing/9781789343731/assets/d929fc98-db73-4c77-9d60-4b4582fa03e2.png)

@@ -56,7 +56,7 @@ class BaseInference(object):
 		#cv2.drawContours(thresh1, contours, -1, (0, 255, 0), 3)
 		#thresh1=cv2.fillPoly(thresh1, contours, 255)
 		thresh1 = cv2.dilate(thresh1, kernel, iterations=2)
-		kernel = np.ones((5,5), np.uint8) 
+		kernel = np.ones((1,1), np.uint8) 
 		thresh1 = cv2.erode(thresh1, kernel, iterations=2)
 		#thresh1 = cv2.dilate(thresh1, kernel, iterations=2)
 		image_alpha = cv2.add(image, thresh1)

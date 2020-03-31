@@ -17,7 +17,7 @@ from utils import utils
 #------------------------------------------------------------------------------
 parser = argparse.ArgumentParser(description="Arguments for the script")
 
-parser.add_argument('--use_cuda', action='store_true', default=False,
+parser.add_argument('--use_cuda', action='store_true', default=True,
                     help='Use GPU acceleration')
 
 parser.add_argument('--bg', type=str, default=None,
@@ -63,7 +63,7 @@ if args.bg is not None:
 
 # Alpha transperency
 else:
-	COLOR1 = [255, 0, 0]
+	COLOR1 = [0, 0, 0]
 	COLOR2 = [0, 0, 255]
 
 
@@ -132,11 +132,11 @@ while(cap.isOpened()):
 	draw = draw_time-predict_time
 	total = read + preproc + pred + draw
 	fps = 1 / total
-	#print("read: %.3f [s]; preproc: %.3f [s]; pred: %.3f [s]; draw: %.3f [s]; total: %.3f [s]; fps: %.2f [Hz]" % 
-	#	(read, preproc, pred, draw, total, fps))
+	print("read: %.3f [s]; preproc: %.3f [s]; pred: %.3f [s]; draw: %.3f [s]; total: %.3f [s]; fps: %.2f [Hz]" % 
+		(read, preproc, pred, draw, total, fps))
 
 	# Wait for interupt
-	cv2.putText(image_alpha, "%.2f [fps]" % (fps), (10, 50), font, 1.5, (0, 255, 0), 2, cv2.LINE_AA)
+#	cv2.putText(image_alpha, "%.2f [fps]" % (fps), (10, 50), font, 1.5, (0, 255, 0), 2, cv2.LINE_AA)
 	out.write(image_alpha[..., ::-1])
 	if args.watch:
 		cv2.imshow('webcam', image_alpha[..., ::-1])
